@@ -91,6 +91,12 @@ function calc_values() {
 
     <!-- Calc remaining XP -->
     let exp = goal_level_memory - current_level_memory - currprog_var;
+
+    <!-- Superbasic error check -->
+    <!-- Set exp to 0 if it is less than 0 -->
+    if (exp < 0) {
+        exp = 0
+    }
     
     <!-- Divides remaining exp required by exp rewards of various activities and outcomes -->
     let cctotal_Win = Math.floor((exp / CrystalineWin_Exp) + Number((exp % CrystalineWin_Exp) > 0));
