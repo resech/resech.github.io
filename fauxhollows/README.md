@@ -1,7 +1,9 @@
 # Faux Hollows Solver
 Statistical tool for solving a mini-game in Final Fantasy XIV.
 
-### [Link to the site.](https://sturalke.github.io/FauxHollowsProbabilisticSolver/)
+Developed by Sturalke, I've updated the fox sighting data as it appears Sturalke might be on break.
+
+### [Link to the site.](https://resech.github.io/fauxhollows/)
 
 Place information into the grid as it is uncovered in game. Use suggestions given by yellow squares with a target icon.
 
