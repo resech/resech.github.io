@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/png" sizes="192x192"  href="./favico/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="./favico/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favico/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./favico/ms-icon-192x192.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>Dice Probability Calculator</title>
+</head>
+<body>
+<pre>
+  ██████╗ ██╗ ██████╗███████╗    ██████╗ ██████╗  ██████╗ ██████╗  █████╗ ██████╗ ██╗██╗     ██╗████████╗██╗   ██╗    
+  ██╔══██╗██║██╔════╝██╔════╝    ██╔══██╗██╔══██╗██╔═══██╗██╔══██╗██╔══██╗██╔══██╗██║██║     ██║╚══██╔══╝╚██╗ ██╔╝    
+  ██║  ██║██║██║     █████╗      ██████╔╝██████╔╝██║   ██║██████╔╝███████║██████╔╝██║██║     ██║   ██║    ╚████╔╝     
+  ██║  ██║██║██║     ██╔══╝      ██╔═══╝ ██╔══██╗██║   ██║██╔══██╗██╔══██║██╔══██╗██║██║     ██║   ██║     ╚██╔╝      
+  ██████╔╝██║╚██████╗███████╗    ██║     ██║  ██║╚██████╔╝██████╔╝██║  ██║██████╔╝██║███████╗██║   ██║      ██║       
+  ╚═════╝ ╚═╝ ╚═════╝╚══════╝    ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚═╝╚══════╝╚═╝   ╚═╝      ╚═╝       
+                                                                                                                      
+               ██████╗ █████╗ ██╗      ██████╗██╗   ██╗██╗      █████╗ ████████╗ ██████╗ ██████╗                      
+              ██╔════╝██╔══██╗██║     ██╔════╝██║   ██║██║     ██╔══██╗╚══██╔══╝██╔═══██╗██╔══██╗                     
+              ██║     ███████║██║     ██║     ██║   ██║██║     ███████║   ██║   ██║   ██║██████╔╝                     
+              ██║     ██╔══██║██║     ██║     ██║   ██║██║     ██╔══██║   ██║   ██║   ██║██╔══██╗                     
+              ╚██████╗██║  ██║███████╗╚██████╗╚██████╔╝███████╗██║  ██║   ██║   ╚██████╔╝██║  ██║                     
+               ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝             
+</pre>
+
+<form action="javascript:calc_values()">
+  <p>
+    <label for="success_chances">How many successes on a die?:</label>
+    <input id="success_chances" max="6" min="0" name="success_chances" value="1" required type="number">
+  </p>
+
+  <p>
+    <label for="num_dice">How many dice are rolled?:</label>
+    <input id="num_dice" max="10" min="1" name="num_dice" value="1" required type="number">
+  </p>
+  <button type="submit">Calculate!</button>
+</form>
+
+<p id="summary"></p>
+
+<script>
+function calc_values() {
+  let success_chances_var = document.getElementById("success_chances").value;
+    let num_dice_var = document.getElementById("num_dice").value;
+
+    <!-- Calculate some stuff-->
+    let success_percentage =((1- (1 - (success_chances_var / 6)) ** num_dice_var) * 100);
+
+    //document.getElementById("summary").innerHTML = `You have ${exp} XP remaining, getting to level ${goal_var} will require:`    
+    document.getElementById("summary").innerHTML = `Chance of at least 1 success when rolling ${num_dice_var} dice is: ${success_percentage.toFixed(2)}`
+}
+</script>
+</body>
+</html>
