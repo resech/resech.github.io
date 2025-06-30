@@ -5,9 +5,9 @@
   },
   "XMage": {
     "version": "1.4.57-dev (20250630T2310)",
-    "location": "http://resech.github.io/xmage/mage-bundle-20250630T2310.zip",
+    "location": "https://github.com/resech/resech.github.io/releases/download/20250630T2310/mage-bundle-20250630T2310.zip",
     "locations": [],
-	    "full": "http://resech.github.io/xmage/mage-bundle-20250630T2310.zip",
+	    "full": "https://github.com/resech/resech.github.io/releases/download/20250630T2310/mage-bundle-20250630T2310.zip",
     "torrent": "",
     "images": "",
     "Launcher": {
