@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Moxfield to XMage (MTGA)</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .flex-container {
+      display: flex;
+      gap: 20px;
+    }
+    .box {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    textarea {
+      width: 100%;
+      height: 300px;
+      resize: vertical;
+    }
+    #output {
+      height: 300px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      white-space: pre-wrap;
+      overflow-y: auto;
+    }
+    button { margin-top: 10px; width: fit-content; }
+  </style>
+</head>
+<body>
+
+  <h2>Moxfield export cleaner</h2>
+  <div class="flex-container">
+    <div class="box">
+      <label for="input">Input:</label>
+      <textarea id="input" placeholder="Paste your multiline input here..."></textarea>
+      <button onclick="cleanText()">Fix</button>
+    </div>
+    <div class="box">
+      <label for="output">Output:</label>
+      <div id="output"></div>
+      <button onclick="copyOutput()">Copy to Clipboard</button>
+    </div>
+  </div>
+
+  <script>
+    const inputField = document.getElementById('input');
+    const outputDiv = document.getElementById('output');
+
+    function cleanText() {
+      const cleanedBody = inputField.value.replace(/\*F\*/g, '');
+      outputDiv.textContent = `Deck\n${cleanedBody}`;
+    }
+
+    function copyOutput() {
+      const text = outputDiv.textContent;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text)
+          .then(() => alert('Cleaned text copied to clipboard!'))
+          .catch(err => alert('Clipboard error: ' + err));
+      } else {
+        alert('Clipboard API not supported in this browser.');
+      }
+    }
+  </script>
+
+</body>
+</html>
