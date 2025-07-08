@@ -50,8 +50,15 @@
     const outputDiv = document.getElementById('output');
 
     function cleanText() {
-      const cleanedBody = inputField.value.replace(/\*F\*/g, '');
-      outputDiv.textContent = `Deck\n${cleanedBody}`;
+      let lines = inputField.value.split('\n');
+      if (
+        lines.length === 0 ||
+        (!lines[0].trim().startsWith('Deck') && !lines[0].trim().startsWith('Commander'))
+      ) {
+        lines.unshift('Deck');
+      }
+      const cleanedBody = lines.join('\n').replace(/\*F\*/g, '');
+      outputDiv.textContent = cleanedBody;
     }
 
     function copyOutput() {
