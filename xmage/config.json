@@ -4,10 +4,10 @@
 	    "location": "https://xmage.today/java/jre-8u201-"
   },
   "XMage": {
-    "version": "1.4.57-dev (20250706T0935)",
-    "location": "https://github.com/resech/resech.github.io/releases/download/20250706T0935/mage-bundle-20250706T0935.zip",
+    "version": "1.4.57-dev (20250712T0018)",
+    "location": "https://github.com/resech/resech.github.io/releases/download/release/mage-bundle-20250712T0018.zip",
     "locations": [],
-	    "full": "https://github.com/resech/resech.github.io/releases/download/20250706T0935/mage-bundle-20250706T0935.zip",
+	    "full": "https://github.com/resech/resech.github.io/releases/download/release/mage-bundle-20250712T0018.zip",
     "torrent": "",
     "images": "",
     "Launcher": {
