@@ -1,1 +1,18 @@
-
+{
+  "java": {
+    "version": "1.8.0_201",
+    "location": "https://xmage.today/java/jre-8u201-"
+  },
+  "XMage": {
+    "version": "1.4.58 (20251012T161836)",
+    "location": "https://github.com/resech/resech.github.io/releases/download/20251012T161836/mage-bundle-20251012T161836.zip",
+    "locations": [],
+    "full": "https://github.com/resech/resech.github.io/releases/download/20251012T161836/mage-bundle-20251012T161836.zip",
+    "torrent": "",
+    "images": "",
+    "Launcher": {
+      "version": "0.4.0",
+      "location": "http://resech.github.io/xmage/XMageLauncher-0.4.0.jar"
+    }
+  }
+}
